@@ -42,6 +42,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setIsLoading(false);
         }
+      } else {
+        userLogout();
       }
     }
     autoLogin();
