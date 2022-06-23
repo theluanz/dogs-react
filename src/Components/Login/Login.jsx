@@ -9,7 +9,6 @@ import styles from './Login.module.css';
 
 const Login = () => {
   const { isLoggedIn } = React.useContext(UserContext);
-  console.log(isLoggedIn);
   if (isLoggedIn === true) return <Navigate to="/conta" />;
   return (
     <section className={styles.loginPage}>

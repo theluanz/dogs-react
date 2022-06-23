@@ -15,7 +15,6 @@ const UserHeader = () => {
         setTitle('Estátisticas');
         break;
       default:
-        console.log(location.pathname);
         setTitle('Minha Conta');
         break;
     }
