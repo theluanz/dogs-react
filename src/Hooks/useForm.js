@@ -3,12 +3,16 @@ import React from 'react';
 const validateTypes = {
   email: {
     regex: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
-    message: 'Write a valid email',
+    message: 'Escreva um email válido',
   },
   password: {
     regex: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/,
     message:
-      'Password must be at least 8 characters and contain at least one number, one uppercase and one lowercase letter',
+      'A senha precisa ter pelo menos 8 caracteres e ter pelo menos uma letra maiúscula,uma minúscula e um número',
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize números apenas',
   },
 };
 
@@ -26,7 +30,7 @@ const useForm = (type) => {
       return true;
     }
     if (value.length === 0) {
-      setError('This field is required');
+      setError('Esse campo é obrigatório');
       return false;
     } else if (validateTypes[type] && !validateTypes[type].regex.test(value)) {
       setError(validateTypes[type].message);

@@ -1,0 +1,19 @@
+.photoPost{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.fileInput {
+  margin-bottom: 1rem;
+}
+.inputFile{
+  margin-bottom: 1rem;
+}
+
+.preview{
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center center;
+  padding-bottom: 100%;
+}
