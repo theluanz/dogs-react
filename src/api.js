@@ -61,3 +61,36 @@ export function PHOTO_POST(formData, token) {
     },
   };
 }
+export function PHOTOS_GET({ page, total, user }) {
+  return {
+    url: API_URL + `v1/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+}
+
+export function PHOTO_GET(id) {
+  return {
+    url: API_URL + `v1/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+}
+
+export function COMMENT_POST(id, body, token) {
+  return {
+    url: API_URL + `v1/comment/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
