@@ -11,7 +11,7 @@ import ProtectedRoute from './Components/Helpers/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
-    <div>
+    <React.StrictMode>
       <BrowserRouter>
         <UserStorage>
           <Header />
@@ -30,7 +30,7 @@ function App() {
           <Footer />
         </UserStorage>
       </BrowserRouter>
-    </div>
+    </React.StrictMode>
   );
 }
 
