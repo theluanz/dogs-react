@@ -7,7 +7,7 @@ import styles from './FeedPhotos.module.css';
 import FeedPhotosItem from '../FeedPhotosItem/FeedPhotosItem';
 
 const FeedPhotos = ({ setModalPhoto }) => {
-  const { data, loading, error, request } = useFetch();
+  const { data, isLoading, error, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchPhotos() {
@@ -17,8 +17,10 @@ const FeedPhotos = ({ setModalPhoto }) => {
     }
     fetchPhotos();
   }, [request]);
+  if (isLoading) return <Loading />;
+
   if (error) return <Error error={error} />;
-  if (loading) return <Loading />;
+
   if (data)
     return (
       <ul className={styles.feed}>

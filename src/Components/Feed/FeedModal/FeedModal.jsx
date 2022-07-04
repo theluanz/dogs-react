@@ -7,7 +7,7 @@ import styles from './FeedModal.module.css';
 import PhotoContent from '../Photo/PhotoContent/PhotoContent';
 
 const FeedModal = ({ photo, setModalPhoto }) => {
-  const { data, error, loading, request } = useFetch();
+  const { data, error, isLoading, request } = useFetch();
 
   React.useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id);
@@ -23,7 +23,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
   return (
     <div className={styles.modal} onClick={handleOutsidClick}>
       {error && <Error error={error} />}
-      {loading && <Loading />}
+      {isLoading && <Loading />}
       {data && <PhotoContent data={data} />}
     </div>
   );

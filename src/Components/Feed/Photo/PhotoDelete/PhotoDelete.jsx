@@ -4,7 +4,7 @@ import styles from './PhotoDelete.module.css';
 import useFetch from '../../../../Hooks/useFetch';
 
 const PhotoDelete = ({ id }) => {
-  const { loading, request } = useFetch();
+  const { isLoading, request } = useFetch();
 
   async function handleDeletePhoto() {
     const confirm = window.confirm('Tem certeza que deseja deletar?');
@@ -19,7 +19,7 @@ const PhotoDelete = ({ id }) => {
   }
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <button className={styles.delete} disabled>
           Carregando
         </button>
