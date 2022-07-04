@@ -19,7 +19,6 @@ export const UserStorage = ({ children }) => {
       setIsLoggedIn(false);
       setIsLoading(false);
       window.localStorage.removeItem('token');
-      navigate('/login');
     },
     [navigate],
   );
