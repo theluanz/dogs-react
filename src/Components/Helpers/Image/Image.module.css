@@ -1,32 +1,31 @@
-.wrapper{
+.wrapper {
   display: grid;
 }
-.skeleton{
+.skeleton {
   grid-area: 1/1;
   height: 100%;
-  background-image: linear-gradient(90deg, #ddd 0px, #FFF 50%, #ddd 100%);
-  background-color: #FFF;
+  background-image: linear-gradient(90deg, #ddd 0px, #fff 50%, #ddd 100%);
+  background-color: #fff;
   background-size: 200%;
   animation: skeleton 1.5s infinite linear;
 }
-.img{
+.img {
   display: block;
   max-width: 100%;
   grid-area: 1/1;
   opacity: 0;
-  transition: .2s;
+  transition: 0.2s;
   height: 100%;
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
 }
 
 @keyframes skeleton {
-  from{
+  from {
     background-position: 0px;
   }
-  to{
+  to {
     background-position: -200%;
   }
-  
 }
