@@ -8,7 +8,10 @@ import FeedPhotosItem from '../FeedPhotosItem/FeedPhotosItem';
 
 const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, isLoading, error, request } = useFetch();
+
   const userId = user ? user.id : 0;
+
+  console.log(userId);
   React.useEffect(() => {
     async function fetchPhotos() {
       const total = 6;
