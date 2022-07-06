@@ -9,23 +9,20 @@ import FeedPhotosItem from '../FeedPhotosItem/FeedPhotosItem';
 const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, isLoading, error, request } = useFetch();
 
-  const userId = user ? user.id : 0;
-
-  console.log(userId);
   React.useEffect(() => {
     async function fetchPhotos() {
       const total = 6;
       const { url, options } = PHOTOS_GET({
         page: page,
         total: total,
-        user: userId,
+        user: user,
       });
       const { response, json } = await request(url, options);
       if (response && response.ok && json.length < total) setInfinite(false);
     }
 
     fetchPhotos();
-  }, [page, request, setInfinite, userId]);
+  }, [page, request, setInfinite, user]);
   if (isLoading) return <Loading />;
 
   if (error) return <Error error={error} />;

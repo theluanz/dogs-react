@@ -39,4 +39,8 @@ const PhotoContent = ({ data, isSingle }) => {
   );
 };
 
+PhotoComments.defaultProps = {
+  isSingle: false,
+};
+
 export default PhotoContent;

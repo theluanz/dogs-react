@@ -6,7 +6,6 @@ import Error from '../../../Helpers/Error/Error';
 import styles from './PhotoCommentsForm.module.css';
 
 const PhotoCommentsForm = ({ id, setComments, isSingle }) => {
-  console.log(isSingle);
   const { request, error } = useFetch();
   const [comment, setComment] = useState('');
 
