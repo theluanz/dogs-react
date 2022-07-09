@@ -18,8 +18,6 @@ const UserStatsGraphs = ({ data }) => {
     setTotal(data.map(({ views }) => Number(views)).reduce((acc, curr) => acc + curr, 0));
   }, [data]);
 
-  console.log(data);
-
   return (
     <section className={`animeLeft ${styles.graph}`}>
       <div className={`${styles.total} ${styles.graphItem}`}>
