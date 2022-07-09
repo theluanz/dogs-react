@@ -28,9 +28,9 @@ const LoginForm = () => {
 
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Username" type="text" name="username" {...username} />
-        <Input label="Password" type="password" name="password" {...password} />
-        <Error error={error} />
+        <Input label="Usuário / Email" type="text" name="username" {...username} />
+        <Input label="Senha" type="password" name="password" {...password} />
+        <Error error={error && 'Dados Incorretos'} />
         {isLoading ? <Button disabled>Loading...</Button> : <Button>Entrar</Button>}
       </form>
       <Link className={styles.recuperar} to="/login/recuperar">
