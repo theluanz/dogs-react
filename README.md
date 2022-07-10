@@ -7,7 +7,7 @@
 -  React
 -  React Router
 -  Module CSS
--  Victoria (gráficos)
+-  Victory (gráficos)
 
 ## Funcionalidades
 - Cadastro de usuários
